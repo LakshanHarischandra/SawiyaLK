@@ -1,4 +1,4 @@
 FROM openjdk:8
-EXPOSE 8080
+EXPOSE 8086
 ADD target/sawiyalk.jar sawiyalk.jar
 ENTRYPOINT ["java","-jar","/sawiyalk.jar"]
