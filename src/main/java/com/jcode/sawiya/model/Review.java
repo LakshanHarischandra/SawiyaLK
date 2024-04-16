@@ -37,9 +37,9 @@ public class Review implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "rating")
     private String rating;
-    @JoinColumn(name = "institute_id", referencedColumnName = "institute_id")
+    @JoinColumn(name = "institution_id", referencedColumnName = "institution_id")
     @ManyToOne
-    private Institute instituteId;
+    private Institute institutionId;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     @ManyToOne
     private User userId;
@@ -80,12 +80,12 @@ public class Review implements Serializable {
         this.rating = rating;
     }
 
-    public Institute getInstituteId() {
-        return instituteId;
+    public Institute getInstitutionId() {
+        return institutionId;
     }
 
-    public void setInstituteId(Institute instituteId) {
-        this.instituteId = instituteId;
+    public void setInstitutionId(Institute institutionId) {
+        this.institutionId = institutionId;
     }
 
     public User getUserId() {

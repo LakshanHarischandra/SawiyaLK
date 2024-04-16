@@ -34,16 +34,16 @@ public class Image implements Serializable {
     private String url;
     @Lob
     @Column(name = "image")
-    private byte[] image;
-    @JoinColumn(name = "institute_id", referencedColumnName = "institute_id")
-    @ManyToOne
-    private Institute instituteId;
+    private byte[] image;    
     @JoinColumn(name = "post_id", referencedColumnName = "post_id")
     @ManyToOne
     private Post postId;
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     @ManyToOne
     private User userId;
+    @JoinColumn(name = "institution_id", referencedColumnName = "institution_id")
+    @ManyToOne
+    private Institute institutionId;
 
     public Image() {
     }
@@ -76,12 +76,12 @@ public class Image implements Serializable {
         this.image = image;
     }
 
-    public Institute getInstituteId() {
-        return instituteId;
+    public Institute getInstitutionId() {
+        return institutionId;
     }
 
-    public void setInstituteId(Institute instituteId) {
-        this.instituteId = instituteId;
+    public void setInstitutionId(Institute institutionId) {
+        this.institutionId = institutionId;
     }
 
     public Post getPostId() {

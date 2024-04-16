@@ -119,9 +119,9 @@ public class Post implements Serializable {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     @ManyToOne(optional = false)
     private User userId;
-    @JoinColumn(name = "institute_id", referencedColumnName = "institute_id")
+    @JoinColumn(name = "institution_id", referencedColumnName = "institution_id")
     @OneToOne(optional = false)
-    private Institute instituteId;
+    private Institute institutionId;
 
     public Post() {
     }
@@ -335,11 +335,11 @@ public class Post implements Serializable {
         this.userId = userId;
     }
 
-    public Institute getInstituteId() {
-        return instituteId;
+    public Institute getInstitutionId() {
+        return institutionId;
     }
 
-    public void setInstituteId(Institute instituteId) {
-        this.instituteId = instituteId;
+    public void setInstitutionId(Institute institutionId) {
+        this.institutionId = institutionId;
     }    
 }

@@ -33,8 +33,8 @@ public class Institute implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "institute_id")
-    private Integer instituteId;
+    @Column(name = "institution_id")
+    private Integer institutionId;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -85,9 +85,9 @@ public class Institute implements Serializable {
     private Date repAgreedOn;
     @Column(name = "Institution_rating")
     private Integer institutionrating;
-    @OneToMany(mappedBy = "instituteId")
+    @OneToMany(mappedBy = "institutionId")
     private List<Image> imageList;
-    @OneToMany(mappedBy = "instituteId")
+    @OneToMany(mappedBy = "institutionId")
     private List<Review> reviewList;
     @JoinColumn(name = "rep_id", referencedColumnName = "rep_id")
     @ManyToOne(optional = false)
@@ -99,12 +99,12 @@ public class Institute implements Serializable {
     public Institute() {
     }
 
-    public Institute(Integer instituteId) {
-        this.instituteId = instituteId;
+    public Institute(Integer institutionId) {
+        this.institutionId = institutionId;
     }
 
-    public Institute(Integer instituteId, String name, String description, String addressLineOne, String city, String postalCode, String country, Date repAgreedOn) {
-        this.instituteId = instituteId;
+    public Institute(Integer institutionId, String name, String description, String addressLineOne, String city, String postalCode, String country, Date repAgreedOn) {
+        this.institutionId = institutionId;
         this.name = name;
         this.description = description;
         this.addressLineOne = addressLineOne;
@@ -114,12 +114,12 @@ public class Institute implements Serializable {
         this.repAgreedOn = repAgreedOn;
     }
 
-    public Integer getInstituteId() {
-        return instituteId;
+    public Integer getinstitutionId() {
+        return institutionId;
     }
 
-    public void setInstituteId(Integer instituteId) {
-        this.instituteId = instituteId;
+    public void setinstitutionId(Integer institutionId) {
+        this.institutionId = institutionId;
     }
 
     public String getName() {
