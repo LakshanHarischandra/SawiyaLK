@@ -1,14 +1,11 @@
 package com.jcode.sawiya.util;
 
-import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.TimeZone;
-
-import com.jcode.sawiya.dto.RepresentativeDTO;
 import com.jcode.sawiya.dto.UserDTO;
 import com.jcode.sawiya.model.Representative;
 import com.jcode.sawiya.model.Role;
@@ -22,8 +19,6 @@ import com.jcode.sawiya.model.User;
  * Project: Sawiya | Volunteer
 */
 public class CommonUtil {
-
-    private static SecurityUtil securityUtil;
 
 	public static User getUserWithDummyData(User user) throws Exception {
         if (Objects.nonNull(user)) {        	
@@ -68,16 +63,12 @@ public class CommonUtil {
     }
 
     public static User getUserFromUserDTO(UserDTO userDTO) throws ParseException {
-
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateFormat.setTimeZone(TimeZone.getDefault());
         String agreedOn = dateFormat.format(date);
-
         Date parsedAgreedOn = dateFormat.parse(agreedOn);
-
             if (Objects.nonNull(userDTO)) {
-
                 User user = new User();
                 user.setTitle(userDTO.getTitle());
                 user.setFirstName(userDTO.getFirstName());
@@ -90,8 +81,8 @@ public class CommonUtil {
                 user.setCountry(userDTO.getCountry());
                 user.setEmail(userDTO.getEmail());
                 user.setContactNumber(userDTO.getContactNumber());
-                user.setPassword(securityUtil.hashPassword(userDTO.getPassword()));
-                user.setNic(securityUtil.hashPassword(userDTO.getNic()));
+                user.setPassword(SecurityUtil.hashPassword(userDTO.getPassword()));
+                user.setNic(SecurityUtil.hashPassword(userDTO.getNic()));
                 user.setEmailToken(SecurityUtil.generateToken());
                 user.setEnabled(userDTO.isEnabled());
                 user.setAgreedOn(parsedAgreedOn);
@@ -99,31 +90,22 @@ public class CommonUtil {
                 user.setRoleId(new Role(userDTO.getRoleId()));
                 return user;
             }
-
-
         return null;
 
     }
 
     public static Representative getRepresentativeFromRepresentativeDTO() throws ParseException{
-
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         dateFormat.setTimeZone(TimeZone.getDefault());
         String appointedOn = dateFormat.format(date);
-
         Date parsedAppointedOn = dateFormat.parse(appointedOn);
-
         dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Date retiredOn = dateFormat.parse(CommonMessages.REPRESENTATIVE_DEFAULT_RETIRED_DATE);
-
         Representative representative = new Representative();
-
         representative.setAppointedOn(parsedAppointedOn);
         representative.setRetiredOn(retiredOn);
-
         return representative;
-
     }
     
     public static String generateEmailBodyWithToken(String userName, String token) {

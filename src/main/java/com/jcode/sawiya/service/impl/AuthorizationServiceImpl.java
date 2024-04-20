@@ -1,10 +1,8 @@
 package com.jcode.sawiya.service.impl;
 
 import java.text.ParseException;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

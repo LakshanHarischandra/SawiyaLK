@@ -7,12 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by Thakshila Bandara
- * Date: Dec 27, 2023.
- * Time: 9:30:04 AM
- * Project: Sawiya | Volunteer
- */
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer> {
 

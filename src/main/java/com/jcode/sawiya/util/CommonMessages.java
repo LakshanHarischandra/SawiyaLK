@@ -1,7 +1,5 @@
 package com.jcode.sawiya.util;
 
-import java.util.Date;
-
 /**
  * Created by Lakshan Harischandra
  * Date: Apr 8, 2022
@@ -25,24 +23,22 @@ public class CommonMessages {
     public static final String USER_AUTHORIZED_AND_PRIVILEGES_GRANTED = "User Identified and Privileges are Granted";
     public static final String EMAIL_AND_PASSWORD_NOT_MATCHED = "Email and Password are not matched for the User";
     public static final String USER_REGISTERED_SUCCESSFULLY = "User registered successfully.";
+    public static final String USER_REGISTERED_FAILED = "Something went wrong when registering the user.";
     public static final String REPRESENTATIVE_REGISTERED_SUCCESSFULLY = "Representative registered successfully.";
     public static final String USER_EMAIL_TOKEN_NOT_MATCHED = "Something went wrong with the Email verification, Please re-check.";
     public static final String USER_ACCOUNT_IS_NOT_ENABLED = "Please verify your email before sign in, an email has been sent to your inbox.";
     public static final String USER_REGITRATION_EMAIL_HEADER = "Confirm Your Email Account with Sawiya!";
     public static final String USER_REGITRATION_EMAIL_SENT_SUCCESS = "An Email has been sent to the relavant user!";
-
-    /*
-    User Rating value
-     */
     public static final Integer DEFAULT_USER_RATING = 0;
 
     /*
-    Roles
-     */
+    Message declarations - Role
+    */
     public static final String ROLE_USER = "User";
     public static final String ROLE_REPRESENTATIVE = "Representative";
+    
     /*
-    Representative details
+    Message declarations - Representative
      */
     public static final String REPRESENTATIVE_DEFAULT_RETIRED_DATE = "31.12.9999";
 
